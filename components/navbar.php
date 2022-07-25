@@ -1,0 +1,20 @@
+<nav>
+    <ul>
+        <li>
+            <h3>Home</h3>
+            <span></span>
+        </li>
+        <li>
+            <h3>About</h3>
+            <span></span>
+        </li>
+        <li>
+            <h3>Portfolio</h3>
+            <span></span>
+        </li>
+        <li>
+            <h3>Contact</h3>
+            <span></span>
+        </li>
+    </ul>
+</nav>

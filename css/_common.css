@@ -1,0 +1,10 @@
+body {
+  background-color: red;
+}
+
+.container {
+  background-image: url("../img/background.jpg");
+  width: 100vw;
+}
+
+/*# sourceMappingURL=_common.css.map */
