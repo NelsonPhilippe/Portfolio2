@@ -3,11 +3,13 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
 }
 
 .container {
-  background-image: url("../img/background.jpg");
-  background-size: cover;
+  position: relative;
+  background-color: rgba(192, 136, 33, 0.4);
   width: 100vw;
   height: 90vh;
 }
@@ -17,4 +19,20 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+h1 {
+  font-family: "Bona Nova";
+  font-style: normal;
+  font-weight: 700;
+  color: #FBFCFC;
+  font-size: 5vw;
+}
+
+h2 {
+  font-family: "Bona Nova";
+  font-style: normal;
+  font-weight: 700;
+  color: #FBFCFC;
+  font-size: 2vw;
 }/*# sourceMappingURL=home.css.map */

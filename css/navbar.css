@@ -2,11 +2,13 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
 }
 
 .container {
-  background-image: url("../img/background.jpg");
-  background-size: cover;
+  position: relative;
+  background-color: rgba(192, 136, 33, 0.4);
   width: 100vw;
   height: 90vh;
 }
@@ -43,13 +45,14 @@ nav li {
 
 nav span {
   position: absolute;
-  width: 100%;
+  width: 0;
   height: 5px;
   bottom: 0;
   left: 50%;
-  padding: 0 20px;
+  padding: 0;
   transform: translateX(-50%);
   background-color: #BE8620;
+  transition: all 150ms ease;
 }
 
 nav h3 {
@@ -58,4 +61,14 @@ nav h3 {
   font-family: "Noto Sans";
   font-style: normal;
   font-size: x-large;
+}
+
+.active {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.inactive {
+  width: 0;
+  padding: 0;
 }/*# sourceMappingURL=navbar.css.map */

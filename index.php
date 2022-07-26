@@ -17,5 +17,7 @@
         <h2>Web Developer</h2>
         <h2>Software Developer</h2>
     </div>
+
+    <?php require "components/footer.php"; ?>
 </body>
 </html>

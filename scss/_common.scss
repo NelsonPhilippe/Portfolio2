@@ -9,15 +9,18 @@ $blue : #009AFA;
 body{
     margin: 0;
     padding: 0;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
 }
 
 .container{
-    background-image: url('../img/background.jpg');
-    background-size: cover;
+    position: relative;
+    background-color: rgba(192, 136, 33, 0.4);
     width: 100vw;
     height: 90vh;
 
 }
+
 
 @mixin flex-center {
     display: flex;
