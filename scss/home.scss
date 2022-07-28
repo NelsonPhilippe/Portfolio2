@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap');
 
 
-.container{
+.home-container{
     @include flex-center;
     flex-direction: column;
-    
+    height: 85vh;
+    width: 100vw;
 }
-
 
 h1{
     font-family: 'Bona Nova';
@@ -15,7 +15,6 @@ h1{
     font-weight: 700;
     color: #FBFCFC;
     font-size: 5vw;
-    // text-shadow: 1px 1px 2px $dark, 0 0 1em $dark, 0 0 0.2em $dark;
 }
 
 h2{
@@ -24,7 +23,6 @@ h2{
     font-weight: 700;
     color: #FBFCFC;
     font-size: 2vw;
-    // text-shadow: 1px 1px 2px $dark, 0 0 1em $dark, 0 0 0.2em $dark;
 
 }
 

@@ -5,7 +5,7 @@ nav{
     background-color: $dark;
     margin: 0;
     padding: 0;
-    height: 10vh;
+    height: 15vh;
     width: 100vw;
 }
 
@@ -46,7 +46,11 @@ nav h3{
     padding: 0;
     color: $white;
     @include font-regular;
-    font-size: x-large;
+    font-size: medium;
+}
+
+nav a{
+    text-decoration: none;
 }
 
 .active{

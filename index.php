@@ -7,15 +7,19 @@
     <title>Nelson Philippe - Web Dev - Software Dev</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/about.css">
+
 </head>
 <body>
     <!-- components navbar -->
     <?php require "components/navbar.php" ?>
 
-    <div class="container">
-        <h1>Nelson Philippe</h1>
-        <h2>Web Developer</h2>
-        <h2>Software Developer</h2>
+
+
+
+    <div class="container" id="container">
+        <?php require "pages/home.php" ?>
+        <?php require "pages/about.php" ?>
     </div>
 
     <?php require "components/footer.php"; ?>
