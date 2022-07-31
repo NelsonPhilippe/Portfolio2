@@ -3,26 +3,32 @@
 
 
 .home-container{
+    position: absolute;
+    left: 0;
     @include flex-center;
     flex-direction: column;
     height: 85vh;
     width: 100vw;
+    transition: left 1.5s;
+    // background-color: rgba(190, 134, 32, 0.5);
+
+    h1{
+        font-family: 'Bona Nova';
+        font-style: normal;
+        font-weight: 700;
+        color: #FBFCFC;
+        font-size: 5vw;
+    }
+    
+    h2{
+        font-family: 'Bona Nova';
+        font-style: normal;
+        font-weight: 700;
+        color: #FBFCFC;
+        font-size: 2vw;
+    
+    }
+    
 }
 
-h1{
-    font-family: 'Bona Nova';
-    font-style: normal;
-    font-weight: 700;
-    color: #FBFCFC;
-    font-size: 5vw;
-}
-
-h2{
-    font-family: 'Bona Nova';
-    font-style: normal;
-    font-weight: 700;
-    color: #FBFCFC;
-    font-size: 2vw;
-
-}
 

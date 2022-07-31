@@ -13,18 +13,81 @@ const span_contact = document.getElementById("span-contact");
 const span_array = [span_home, span_about, span_portfolio, span_contact];
 
 
+const home_container = document.getElementById('home-container');
+const about_container = document.getElementById('about-container');
+const portfolio_container = document?.getElementById('portfolio-container');
+
+
+const container_array = [home_container, about_container, portfolio_container];
+
+let last_page;
+
+$(document).ready(() => {
+    last_page = "home-container";
+
+
+    if(window.localStorage.getItem('last_btn') !== undefined && window.localStorage.getItem('last_btn') != null){
+
+        last_btn = window.localStorage.getItem('last_btn');
+
+        const last_btn_element = document.getElementById(window.localStorage.getItem('last_btn'));
+
+        click(last_btn_element);
+    }
+
+
+    if(window.localStorage.getItem('last_page') !== undefined && window.localStorage.getItem('last_page') != null){
+
+        last_page = window.localStorage.getItem('last_page');
+        nextPage('home-container', last_page)
+        return;
+    }
+
+    window.localStorage.setItem('last_btn', 'btn-home');
+    window.localStorage.setItem('last_page', last_page)
+
+})
+
+
 
 for (let i = 0; i < btn_array.length; i++) {
 
 
-    btn_array[i].addEventListener('mouseenter', () => {
+    btn_array[i].addEventListener('mouseenter', (e) => {
 
         enter(span_array[i])
     })
 
     btn_array[i].addEventListener('click', (e) => {
-
         click(span_array[i])
+
+
+        window.localStorage.setItem('last_btn', span_array[i].id)
+
+        
+        if(btn_array[i].id === "btn-home"){
+            nextPage(last_page, 'home-container')
+        }
+
+        if(btn_array[i].id === "btn-about"){
+            nextPage(last_page, 'about-container')
+        }
+
+
+        if(btn_array[i].id === "btn-portfolio"){
+            nextPage(last_page, 'portfolio-container')
+        }
+
+        for(let c = 0; c < container_array.length; c++){
+            const classlist = $(container_array[i]).attr("class").split(/\s+/);
+            if(classlist.includes('visible')){
+                last_page = classlist[0];
+                window.localStorage.setItem('last_page', last_page);
+                break;
+            }
+        }
+
+
     })
 
     btn_array[i].addEventListener('mouseleave', (e) => {
@@ -70,13 +133,60 @@ function click(element) {
 
 
 
-function nextPage(element){
+function nextPage(last_page_id, new_page_id){
+    const last_page_element = document.getElementById(last_page_id);
+    const new_page_element = document.getElementById(new_page_id);
+    let last_page = 0;
+    let new_page = 0;
 
-    $margin = $(element).css('margin-left')
-    $(element).css('margin-left', $margin + " - 100vw")
+    for(let i = 0; i < container_array.length; i++){
 
-}
+        if(container_array[i].id === last_page_id){
+            last_page = i;
+        }
 
-function previousPage(){
+        if(container_array[i].id === new_page_id){
+            new_page = i;
+        }
+    }
+
+    if(last_page == new_page){
+        return;
+    }
+
+
+    if(new_page > last_page){
+
+        for(let i = 0; i <= new_page; i++){
+
+            if(container_array[i].id != new_page_id){
+                $(container_array[i]).css('left', '-100vw')
+
+            }
+
+        }
+
+
+        $(new_page_element).css('left', '0')
+        new_page_element.classList.add('visible')
+        last_page_element.classList.remove('visible')
+    }
+
+
+
+    if(new_page < last_page){
+
+        for(let i = new_page; i < last_page; i++){
+            $(container_array[i]).css('left', '100vw')
+        }
+
+
+
+        $(last_page_element).css('left', '100vw')
+        $(new_page_element).css('left', '0')
+        last_page_element.classList.remove('visible')
+        new_page_element.classList.add('visible')
+
+    }
 
 }

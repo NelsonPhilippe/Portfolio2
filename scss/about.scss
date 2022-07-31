@@ -1,7 +1,15 @@
 @import './_common.scss';
 
 .about-container{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    left: 100vw;
     width: 100vw;
+    height: 85vh;
+    transition: left 1.5s;
+    overflow-y: scroll;
 }
 
 .text-presentation{
@@ -14,7 +22,7 @@
 
 .text-presentation p{
     @include flex-center;
-    background-color: rgba(23, 32, 42, 0.6);
+    background-color: rgba(27, 54, 79, 0.6);
     width: 60%;
     height: 50vh;
     border-radius: 50%;
@@ -37,12 +45,11 @@
     font-family: 'Noto Sans';
     font-style: normal;
     color: $white;
-    background-color: rgba(23, 32, 42, 0.6);
+    background-color: rgba(27, 54, 79, 0.6);
     margin: 5%;
     padding: 5%;
     border-radius: 20px;
     line-height: 33px;
-
 
 }
 

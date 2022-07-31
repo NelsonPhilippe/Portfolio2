@@ -1,4 +1,4 @@
-<div class="about-container">
+<div class="about-container" id="about-container">
     <div class="text-presentation">
         <p>
             Actuellement 20 ans. <br>

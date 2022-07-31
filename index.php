@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 
 </head>
 <body>
@@ -20,6 +21,7 @@
     <div class="container" id="container">
         <?php require "pages/home.php" ?>
         <?php require "pages/about.php" ?>
+        <?php require "pages/portfolio.php" ?>
     </div>
 
     <?php require "components/footer.php"; ?>

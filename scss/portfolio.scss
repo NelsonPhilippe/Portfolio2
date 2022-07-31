@@ -1,0 +1,140 @@
+@import './_common.scss';
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+.portfolio-container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    left: 100vw;
+    width: 100vw;
+    height: 85vh;
+    transition: left 1.5s;
+    overflow-y: scroll;
+}
+
+.carousel-container {
+    @include flex-center;
+    width: 80vw;
+    height: 40vh;
+    margin-top: 5%;
+
+    div {
+        position: relative;
+        @include flex-center;
+        height: 40vh;
+        width: 60%;
+        overflow: hidden;
+        text-align: center;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transition: left 1.5s;
+            width: 100%;
+        }
+
+
+        #carousel-1 {
+            left: 0;
+
+        }
+
+        #carousel-2 {
+            left: 100%;
+
+        }
+
+
+        #carousel-3 {
+            left: 200%;
+        }
+
+        #carousel-4 {
+            left: 300%;
+        }
+
+
+    }
+
+    .arrow {
+        border: solid $white;
+        border-width: 0 5px 5px 0;
+        border-radius: 5px;
+        padding: 30px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+}
+
+
+
+.description {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    padding: 5%;
+    margin: 5%;
+    background-color: rgba(27, 54, 79, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
+
+
+    h2 {
+        text-align: center;
+        color: $white;
+        font-family: 'Noto Sans';
+        font-style: normal;
+    }
+
+    p {
+        text-align: center;
+        color: $white;
+        font-family: 'Noto Sans';
+        font-style: normal;
+    }
+
+    div {
+        position: absolute;
+        transition: left 1s;
+        width: 100%;
+        @include flex-center;
+        flex-direction: column;
+
+
+    }
+
+    #desc-1 {
+        left: 0;
+    }
+
+    #desc-2 {
+        left: 100%;
+    }
+
+    #desc-3 {
+        left: 200%;
+    }
+
+    #desc-4 {
+        left: 300%;
+    }
+}

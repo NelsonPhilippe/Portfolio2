@@ -15,16 +15,19 @@ body{
     height: 100%;
     overflow: hidden;
 
+    .container{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        background-color: rgba(192, 136, 33, 0.4);
+        width: 200vw;
+        height: 100vh;
+    }
+    
+
 }
 
-.container{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    background-color: rgba(192, 136, 33, 0.4);
-    width: 200vw;
-    height: 100%;
-}
 
 
 
