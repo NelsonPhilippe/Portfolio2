@@ -4,14 +4,14 @@
 
 .portfolio-container {
     display: flex;
-    position: absolute;
+    //position: absolute;
     align-items: center;
     flex-direction: column;
-    left: 100vw;
+    //left: 100vw;
     width: 100vw;
     height: 85vh;
     transition: left 1.5s;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .carousel-container {
@@ -20,20 +20,40 @@
     height: 40vh;
     margin-top: 5%;
 
-    div {
+    #carousel {
         position: relative;
-        @include flex-center;
-        height: 40vh;
-        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
         overflow: hidden;
-        text-align: center;
+        height: 60vh;
+        margin: 10%;
+
+
+        @media (max-width: 540px) {
+            width: 90%;
+        }
+    
+    
+        @media (min-width: 540px) {
+            // width: 70vw;
+            width: 90%;
+        }
 
         img {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 100%;
+            transform: translateY(-50%);
             transition: left 1.5s;
+            height: auto;
             width: 100%;
+            border-radius: 20px;
+
+            @media (min-width: 540px) {
+                
+            }
         }
 
 
@@ -63,7 +83,15 @@
         border: solid $white;
         border-width: 0 5px 5px 0;
         border-radius: 5px;
-        padding: 30px;
+
+        @media (min-width: 540px) {
+            padding: 30px;
+
+        }
+
+        @media (max-width: 540px) {
+            padding: 15px;
+        }
 
         &:hover {
             cursor: pointer;
@@ -91,6 +119,7 @@
     justify-content: center;
     flex-direction: column;
     width: 50%;
+    height: 40%;
     padding: 5%;
     margin: 5%;
     background-color: rgba(27, 54, 79, 0.6);

@@ -3,8 +3,8 @@
 
 
 .home-container{
-    position: absolute;
-    left: 0;
+    //position: absolute;
+    //left: 0;
     @include flex-center;
     flex-direction: column;
     height: 85vh;

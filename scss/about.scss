@@ -2,40 +2,68 @@
 
 .about-container{
     display: flex;
-    position: absolute;
+    //position: absolute;
     align-items: center;
     flex-direction: column;
-    left: 100vw;
+    //left: 100vw;
     width: 100vw;
     height: 85vh;
     transition: left 1.5s;
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .text-presentation{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 5%
+    margin-top: 5%;
 
+    @media (min-width: 540px) {
+        p{
+            @include flex-center;
+            @include font-regular;
+            background-color: rgba(27, 54, 79, 0.6);
+            width: 60%;
+            height: 50vh;
+            border-radius: 50%;
+            text-align: center;
+            color: $white;
+            padding: 5px;
+            margin-right: 5%;
+        }
+    }
+
+    @media (max-width: 540px) {
+        p{
+            @include flex-center;
+            @include font-regular;
+            font-size: small;
+            background-color: rgba(27, 54, 79, 0.6);
+            width: 60%;
+            height: 50vh;
+            border-radius: 50%;
+            text-align: center;
+            color: $white;
+            padding: 5px;
+            margin-right: 5%;
+        }
+    }
+
+    @media (min-width: 540px) {
+        img{
+            border-radius: 50%;
+        }
+    }
+
+    @media (max-width: 540px) {
+        img{
+            border-radius: 50%;
+            width: 50%;
+            height: auto;
+        }
+    }
 }
 
-.text-presentation p{
-    @include flex-center;
-    background-color: rgba(27, 54, 79, 0.6);
-    width: 60%;
-    height: 50vh;
-    border-radius: 50%;
-    text-align: center;
-    color: $white;
-    @include font-regular;
-    padding: 5px;
-    margin-right: 5%;
-}
-
-.text-presentation img{
-    border-radius: 50%;
-}
 
 
 .text-exeperience{
@@ -51,16 +79,19 @@
     border-radius: 20px;
     line-height: 33px;
 
+
+    #separator{
+        background-color: $white;
+        width: 95%;
+        height: 4px;
+        margin: 20px;
+    }
+
+    h4{
+        color: #009AFA;
+    }
 }
 
 
-#separator{
-    background-color: $white;
-    width: 95%;
-    height: 4px;
-    margin: 20px;
-}
 
-.text-exeperience h4{
-    color: #009AFA;
-}
+

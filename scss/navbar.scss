@@ -7,58 +7,77 @@ nav{
     padding: 0;
     height: 15vh;
     width: 100vw;
-}
 
-nav ul{
-    @include flex-center;
-    flex-direction: row;
-    height: 100%;
-    width: 60%;
-    margin: 0;
-}
+    ul {
+        @include flex-center;
+        flex-direction: row;
+        height: 100%;
+        width: 60%;
+        margin: 0;
+        padding: 0;
+    }
 
-nav li{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin: 0 5%;
-    list-style: none;
-    cursor: pointer;
+    li{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3%;
+        margin: 0 2%;
+        list-style: none;
+        cursor: pointer;
 
+        &:after{
+            display:block;
+            content: '';
+            border-bottom: solid 5px $orange;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;
+        }
     
+        &:hover:after{
+            transform: scaleX(1.5);
+        }
+    }
+
+    .active{
+        &::after{
+            display:block;
+            content: '';
+            border-bottom: solid 5px $orange;
+            transform: scaleX(1.5);
+            transition: transform 250ms ease-in-out;
+        }
+    }
+
+    @media (min-width: 540px) {
+        h3{
+            padding: 0;
+            color: $white;
+            @include font-regular;
+            font-size: x-large;
+        }
+    }
+
+    @media (max-width: 540px) {
+        h3{
+            padding: 0;
+            color: $white;
+            @include font-regular;
+            font-size: large;
+        }
+    }
+
+
+    a{
+        text-decoration: none;
+    }
+
+
+
 }
 
-nav span{
-    position: absolute;
-    width: 0;
-    height: 5px;
-    bottom: 0;
-    left: 50%;
-    padding: 0;
-    transform: translateX(-50%);
-    background-color: $orange;
-    transition: all 150ms ease;
-}
 
 
 
-nav h3{
-    padding: 0;
-    color: $white;
-    @include font-regular;
-    font-size: medium;
-}
 
-nav a{
-    text-decoration: none;
-}
 
-.active{
-    width: 100%;
-    padding: 0 20px;
-}
-
-.inactive{
-    width: 0;
-    padding: 0;
-}

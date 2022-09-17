@@ -5,6 +5,10 @@ $orange : #BE8620;
 $white : #EDFBFF;
 $blue : #009AFA;
 
+html{
+    overflow-x: hidden;
+
+}
 
 body{
     margin: 0;
@@ -14,20 +18,36 @@ body{
     background-attachment: fixed;
     height: 100%;
     overflow: hidden;
-
+    -webkit-overflow-scrolling: auto;
     .container{
-        position: relative;
+        //position: relative;
         display: flex;
         flex-direction: row;
         position: relative;
         background-color: rgba(192, 136, 33, 0.4);
-        width: 200vw;
+        width: 100vw;
         height: 100vh;
+    }
+
+    .container-ca{
+        display: flex;
+        flex-direction: row;
+        transition: transform 0.3s;
+        transform: translate3d(0, 0, 0);
+
+        &:after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+    }
+
+    .item{
+        float: left;
     }
     
 
 }
-
 
 
 

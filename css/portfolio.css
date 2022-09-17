@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&display=swap");
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,27 +12,39 @@ body {
   background-attachment: fixed;
   height: 100%;
   overflow: hidden;
+  -webkit-overflow-scrolling: auto;
 }
 body .container {
-  position: relative;
   display: flex;
   flex-direction: row;
   position: relative;
   background-color: rgba(192, 136, 33, 0.4);
-  width: 200vw;
+  width: 100vw;
   height: 100vh;
+}
+body .container-ca {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s;
+  transform: translate3d(0, 0, 0);
+}
+body .container-ca:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+body .item {
+  float: left;
 }
 
 .portfolio-container {
   display: flex;
-  position: absolute;
   align-items: center;
   flex-direction: column;
-  left: 100vw;
   width: 100vw;
   height: 85vh;
   transition: left 1.5s;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .carousel-container {
@@ -39,40 +55,62 @@ body .container {
   height: 40vh;
   margin-top: 5%;
 }
-.carousel-container div {
+.carousel-container #carousel {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh;
-  width: 60%;
+  flex-direction: row;
   overflow: hidden;
-  text-align: center;
+  height: 60vh;
+  margin: 10%;
 }
-.carousel-container div img {
+@media (max-width: 540px) {
+  .carousel-container #carousel {
+    width: 90%;
+  }
+}
+@media (min-width: 540px) {
+  .carousel-container #carousel {
+    width: 90%;
+  }
+}
+.carousel-container #carousel img {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 100%;
+  transform: translateY(-50%);
   transition: left 1.5s;
+  height: auto;
   width: 100%;
+  border-radius: 20px;
 }
-.carousel-container div #carousel-1 {
+.carousel-container #carousel #carousel-1 {
   left: 0;
 }
-.carousel-container div #carousel-2 {
+.carousel-container #carousel #carousel-2 {
   left: 100%;
 }
-.carousel-container div #carousel-3 {
+.carousel-container #carousel #carousel-3 {
   left: 200%;
 }
-.carousel-container div #carousel-4 {
+.carousel-container #carousel #carousel-4 {
   left: 300%;
 }
 .carousel-container .arrow {
   border: solid #EDFBFF;
   border-width: 0 5px 5px 0;
   border-radius: 5px;
-  padding: 30px;
+}
+@media (min-width: 540px) {
+  .carousel-container .arrow {
+    padding: 30px;
+  }
+}
+@media (max-width: 540px) {
+  .carousel-container .arrow {
+    padding: 15px;
+  }
 }
 .carousel-container .arrow:hover {
   cursor: pointer;
@@ -93,6 +131,7 @@ body .container {
   justify-content: center;
   flex-direction: column;
   width: 50%;
+  height: 40%;
   padding: 5%;
   margin: 5%;
   background-color: rgba(27, 54, 79, 0.6);
@@ -131,4 +170,6 @@ body .container {
 }
 .description #desc-4 {
   left: 300%;
-}/*# sourceMappingURL=portfolio.css.map */
+}
+
+/*# sourceMappingURL=portfolio.css.map */
