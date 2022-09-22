@@ -1,14 +1,11 @@
 <div class="portfolio-container" id="portfolio-container">
     <div class="carousel-container">
-        <i class="arrow left" id="arrow-left"></i>
-        <div id="carousel">
+        <div id="carousel-pf">
             <img id="carousel-1" src="img/screen_portfolio_v1.png" alt="screen_portfolio_v1">
             <img id="carousel-2" src="img/screen_portfolio_v1.png" alt="screen_portfolio_v1">
             <img id="carousel-3" src="img/screen_portfolio_v1.png" alt="screen_portfolio_v1">
             <img id="carousel-4" src="img/screen_portfolio_v1.png" alt="screen_portfolio_v1">
-
         </div>
-        <i class="arrow right" id="arrow-right"></i>
     </div>
 
     <div class="description" id="description">

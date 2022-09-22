@@ -14,103 +14,35 @@
     overflow-y: auto;
 }
 
-.carousel-container {
-    @include flex-center;
-    width: 80vw;
-    height: 40vh;
-    margin-top: 5%;
+.carousel-pf{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(192, 136, 33, 0.4);
+    width: 30vw;
+    height: 20vh;
+}
 
-    #carousel {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        overflow: hidden;
-        height: 60vh;
-        margin: 10%;
+.carousel-portfolio{
+    width: 60%;
+}
 
+.container-ca-portfolio{
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
 
-        @media (max-width: 540px) {
-            width: 90%;
-        }
-    
-    
-        @media (min-width: 540px) {
-            // width: 70vw;
-            width: 90%;
-        }
-
-        img {
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            transform: translateY(-50%);
-            transition: left 1.5s;
-            height: auto;
-            width: 100%;
-            border-radius: 20px;
-
-            @media (min-width: 540px) {
-                
-            }
-        }
-
-
-        #carousel-1 {
-            left: 0;
-
-        }
-
-        #carousel-2 {
-            left: 100%;
-
-        }
-
-
-        #carousel-3 {
-            left: 200%;
-        }
-
-        #carousel-4 {
-            left: 300%;
-        }
-
-
-    }
-
-    .arrow {
-        border: solid $white;
-        border-width: 0 5px 5px 0;
-        border-radius: 5px;
-
-        @media (min-width: 540px) {
-            padding: 30px;
-
-        }
-
-        @media (max-width: 540px) {
-            padding: 15px;
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-
-    }
-
-    .right {
-        transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-    }
-
-    .left {
-        transform: rotate(135deg);
-        -webkit-transform: rotate(135deg);
+    &:after{
+        content: "";
+        clear: both;
+        display: table;
     }
 }
 
-
+.item_carousel-nav{
+    float: left;
+}
 
 .description {
     position: relative;

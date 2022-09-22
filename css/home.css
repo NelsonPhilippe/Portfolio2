@@ -15,6 +15,7 @@ body {
   -webkit-overflow-scrolling: auto;
 }
 body .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -22,18 +23,18 @@ body .container {
   width: 100vw;
   height: 100vh;
 }
-body .container-ca {
+body .container-ca-nav {
   display: flex;
   flex-direction: row;
   transition: transform 0.3s;
   transform: translate3d(0, 0, 0);
 }
-body .container-ca:after {
+body .container-ca-nav:after {
   content: "";
   clear: both;
   display: table;
 }
-body .item {
+body .item_carousel-nav {
   float: left;
 }
 

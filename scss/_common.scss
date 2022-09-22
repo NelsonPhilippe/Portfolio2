@@ -20,7 +20,7 @@ body{
     overflow: hidden;
     -webkit-overflow-scrolling: auto;
     .container{
-        //position: relative;
+        position: relative;
         display: flex;
         flex-direction: row;
         position: relative;
@@ -29,7 +29,7 @@ body{
         height: 100vh;
     }
 
-    .container-ca{
+    .container-ca-nav{
         display: flex;
         flex-direction: row;
         transition: transform 0.3s;
@@ -42,7 +42,7 @@ body{
         }
     }
 
-    .item{
+    .item_carousel-nav{
         float: left;
     }
     

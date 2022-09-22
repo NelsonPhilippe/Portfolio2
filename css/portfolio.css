@@ -15,6 +15,7 @@ body {
   -webkit-overflow-scrolling: auto;
 }
 body .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -22,18 +23,18 @@ body .container {
   width: 100vw;
   height: 100vh;
 }
-body .container-ca {
+body .container-ca-nav {
   display: flex;
   flex-direction: row;
   transition: transform 0.3s;
   transform: translate3d(0, 0, 0);
 }
-body .container-ca:after {
+body .container-ca-nav:after {
   content: "";
   clear: both;
   display: table;
 }
-body .item {
+body .item_carousel-nav {
   float: left;
 }
 
@@ -47,81 +48,33 @@ body .item {
   overflow-y: auto;
 }
 
-.carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80vw;
-  height: 40vh;
-  margin-top: 5%;
-}
-.carousel-container #carousel {
+.carousel-pf {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: row;
-  overflow: hidden;
-  height: 60vh;
-  margin: 10%;
+  background-color: rgba(192, 136, 33, 0.4);
+  width: 30vw;
+  height: 20vh;
 }
-@media (max-width: 540px) {
-  .carousel-container #carousel {
-    width: 90%;
-  }
+
+.carousel-portfolio {
+  width: 60%;
 }
-@media (min-width: 540px) {
-  .carousel-container #carousel {
-    width: 90%;
-  }
+
+.container-ca-portfolio {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s;
+  transform: translate3d(0, 0, 0);
 }
-.carousel-container #carousel img {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  transition: left 1.5s;
-  height: auto;
-  width: 100%;
-  border-radius: 20px;
+.container-ca-portfolio:after {
+  content: "";
+  clear: both;
+  display: table;
 }
-.carousel-container #carousel #carousel-1 {
-  left: 0;
-}
-.carousel-container #carousel #carousel-2 {
-  left: 100%;
-}
-.carousel-container #carousel #carousel-3 {
-  left: 200%;
-}
-.carousel-container #carousel #carousel-4 {
-  left: 300%;
-}
-.carousel-container .arrow {
-  border: solid #EDFBFF;
-  border-width: 0 5px 5px 0;
-  border-radius: 5px;
-}
-@media (min-width: 540px) {
-  .carousel-container .arrow {
-    padding: 30px;
-  }
-}
-@media (max-width: 540px) {
-  .carousel-container .arrow {
-    padding: 15px;
-  }
-}
-.carousel-container .arrow:hover {
-  cursor: pointer;
-}
-.carousel-container .right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-.carousel-container .left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+
+.item_carousel-nav {
+  float: left;
 }
 
 .description {

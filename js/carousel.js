@@ -2,13 +2,14 @@ class Carousel {
 
     /**
      *
-     * @param {element}
+     * @param element
+     * @param carousel_id
      * @param {Object} options
      * @param {Object} options.slidesToScroll
      * @param {Object} options.slidesVisible
      * @param {boolean} options.loop
      */
-    constructor(element, options = {}) {
+    constructor(element, carousel_id = null, options = {}) {
         this.element = element;
         this.options = Object.assign({}, {
             slidesToScroll: 1,
@@ -19,13 +20,13 @@ class Carousel {
 
         this.currentItem = 0
 
-        this.root = this.createDivWithClass('carousel')
-        this.container = this.createDivWithClass('container-ca')
+        this.root = this.createDivWithClass('carousel-' + carousel_id)
+        this.container = this.createDivWithClass('container-ca-' +  carousel_id)
         this.root.appendChild(this.container)
         this.element.appendChild(this.root)
         this.moveCallbacks = []
         this.items = children.map((child) => {
-            let item = this.createDivWithClass("item_carousel")
+            let item = this.createDivWithClass("item_carousel-" +  carousel_id)
             item.appendChild(child)
             this.container.appendChild(item)
             return item;
@@ -40,7 +41,7 @@ class Carousel {
     setStyle(){
         let ratio = this.items.length / this.options.slidesVisible;
         this.container.style.width = (ratio * 100) + '%';
-        this.container.style.height ='100%';
+        // this.container.style.height ='100%';
 
         this.items.forEach((item) => {
             item.style.width = ((100 / this.options.slidesVisible) / ratio + "%")
@@ -119,4 +120,11 @@ class Carousel {
     getIndex(){
         return this.currentItem;
     }
+
+    setIndex(index){
+        this.goTo(index)
+        this.currentItem = index;
+    }
+
+
 }
