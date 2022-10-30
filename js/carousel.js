@@ -8,8 +8,10 @@ class Carousel {
      * @param {Object} options.slidesToScroll
      * @param {Object} options.slidesVisible
      * @param {boolean} options.loop
+     * @param {Carousel} carousel_link
      */
-    constructor(element, carousel_id = null, options = {}) {
+    constructor(element, carousel_id = null, options = {}, carousel_link = undefined) {
+        this.carousel_link = carousel_link
         this.element = element;
         this.options = Object.assign({}, {
             slidesToScroll: 1,
@@ -60,10 +62,16 @@ class Carousel {
         nextButton.addEventListener('click', () => {
             console.log('next')
             this.goTo(this.currentItem + this.options.slidesToScroll)
+            if(this.carousel_link !== undefined){
+                this.carousel_link.goTo(this.carousel_link.getIndex() + this.carousel_link.getOptions().slidesToScroll)
+            }
         })
         prevButton.addEventListener('click', () => {
             console.log('prev')
             this.goTo(this.currentItem - this.options.slidesToScroll)
+            if(this.carousel_link !== undefined){
+                this.carousel_link.goTo(this.carousel_link.getIndex() - this.carousel_link.getOptions().slidesToScroll)
+            }
         })
 
         this.onMove((index) => {
@@ -126,5 +134,8 @@ class Carousel {
         this.currentItem = index;
     }
 
+    getOptions(){
+        return this.options
+    }
 
 }

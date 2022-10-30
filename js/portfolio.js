@@ -23,9 +23,19 @@ let last_desc = desc_1;
 
 
 let portfolio_carousel;
+let portfolio_description_carousel;
 
 window.addEventListener('load', () => {
-    portfolio_carousel = new Carousel(document.querySelector('#carousel-pf'), 'portfolio')
+    portfolio_description_carousel = new Carousel(document.querySelector('#description'),
+        'description')
+    portfolio_carousel = new Carousel(document.querySelector('#carousel-pf'), 'portfolio', {
+        slidesToScroll: 1,
+        slidesVisible: 1,
+        loop: true
+    }, portfolio_description_carousel)
+    portfolio_carousel.createNavigation()
+
+    // portfolio_description_carousel.createNavigation()
 })
 
 

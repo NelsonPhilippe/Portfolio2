@@ -1,0 +1,17 @@
+{
+    "name": "nenel/portfolio_v2",
+    "autoload": {
+        "psr-4": {
+            "Nenel\\PortfolioV2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "XiliTra",
+            "email": "philippenelson59@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
+    }
+}

@@ -44,7 +44,19 @@ body .item_carousel-nav {
   width: 100vw;
   height: 85vh;
   transition: left 1.5s;
-  overflow-y: hidden;
+  overflow-y: auto;
+}
+.about-container::-webkit-scrollbar {
+  width: 10px;
+}
+.about-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.about-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.about-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .text-presentation {
